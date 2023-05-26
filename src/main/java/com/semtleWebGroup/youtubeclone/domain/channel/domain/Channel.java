@@ -55,13 +55,9 @@ public class Channel {
     @OneToMany(mappedBy = "channel", cascade = CascadeType.REMOVE)
     private Set<Comment> commentsLikeLists = new HashSet<>();
 
-    @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member member;
 
     @Builder
-    public Channel(String title, String description, Member member){
-        this.member = member;
+    public Channel(String title, String description){
         this.title = title;
         this.description = description;
     }

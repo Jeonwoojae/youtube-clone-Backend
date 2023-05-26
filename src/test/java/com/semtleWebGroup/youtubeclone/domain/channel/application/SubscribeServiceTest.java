@@ -22,13 +22,11 @@ public class SubscribeServiceTest extends MockTest {
     // mock up
     private static SubscribeService subscribeService;
     private static ChannelRepository channelRepository;
-    private static ChannelOwnerCheckService channelOwnerCheckService;
 
     @BeforeAll
     public static void setMockChannelRepository() {
         channelRepository = Mockito.mock(ChannelRepository.class);
-        channelOwnerCheckService = Mockito.mock(ChannelOwnerCheckService.class);
-        subscribeService = new SubscribeService(channelRepository, channelOwnerCheckService);
+        subscribeService = new SubscribeService(channelRepository);
     }
 
     @Nested

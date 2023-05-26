@@ -43,10 +43,7 @@ public class VideoServiceTest extends MockTest {
         @DisplayName("upload 테스트 - 썸네일 O")
         void testUpload() {
             // given
-            Channel channel = Channel.builder()
-                    .title("Title")
-                    .description("Description")
-                    .build();
+            Channel channel = new Channel("Title", "Description");
             MultipartFile videoFile = new MockMultipartFile("test.mp4", "test".getBytes());
             MultipartFile thumbImg = new MockMultipartFile("test.jpg", "test".getBytes());
             VideoUploadDto dto = VideoUploadDto.builder()
@@ -76,10 +73,7 @@ public class VideoServiceTest extends MockTest {
         void delete() {
             // given
             Video video = new Video();
-            Channel channel = Channel.builder()
-                    .title("Title")
-                    .description("Description")
-                    .build();
+            Channel channel = new Channel("Title", "Description");
             channel.addVideo(video);
             assertEquals(1, channel.getVideos().size());
 

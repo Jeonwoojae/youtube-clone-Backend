@@ -13,7 +13,6 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class SubscribeService {
     final private ChannelRepository channelRepository;
-    final private ChannelOwnerCheckService channelOwnerCheckService;
 
     @Transactional
     public void subscribe(Long channelId, Long subscribedChannelId) {
